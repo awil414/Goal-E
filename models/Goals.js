@@ -19,6 +19,9 @@ Goals.init(
         description: {
             type: DataTypes.STRING,
         },
+        subtask: {
+            type: DataTypes.STRING,
+        },
         date_created: {
             type: DataTypes.DATE,
             allowNull: false,
