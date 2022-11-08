@@ -1,10 +1,10 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Goals extends Model {}
+class Checklist extends Model {}
 
 
-Goals.init(
+Checklist.init(
     {
         id:{
             type: DataTypes.INTEGER,
@@ -12,22 +12,18 @@ Goals.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        title: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
         description: {
             type: DataTypes.STRING,
-        },
-        date_created: {
-            type: DataTypes.DATE,
             allowNull: false,
-            defaultValue: DataTypes.NOW,
+            validate:{
+                len:[1]
+            }
         },
-        user_id: {
+        goals_id: {
             type: DataTypes.INTEGER,
+            allowNull: false,
             references: {
-              model: 'user',
+              model: 'goals',
               key: 'id',
             },
         },
@@ -37,9 +33,9 @@ Goals.init(
         timestamps: true,
         freezeTableName: true,
         underscored: true,
-        modelName: 'goals',
+        modelName: 'checklist',
     }
 );
       
-      module.exports = Goals;
+module.exports = Checklist;
       
