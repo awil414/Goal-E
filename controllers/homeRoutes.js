@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User, Goals, Checklist } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/profile', withAuth, async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try {
       const goalsData = await Goals.findAll({
         attributes: ['id', 'title', 'description', 'created_at', 'user_id'],
