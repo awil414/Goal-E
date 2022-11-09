@@ -48,29 +48,5 @@ router.put("/:id", withAuth, async (req, res) => {
   }
 });
 
-router.get('/', withAuth, async (req, res) => {
-    try {
-      const postData = await Post.findAll({
-        where: {
-          // use session ID
-          user_id: req.session.user_id,
-        },
-        attributes: ['id', 'title', 'description', 'created_at', 'user_id'],
-        order:[
-          ['created_at', 'DESC']
-        ],
-        include: [
-          {
-            model: Comment,
-            attributes: ['comment_text'],
-          }
-        ],
-        
-        } res.status(200).json(postData)
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  }); 
-    });
 
 module.exports = router;
