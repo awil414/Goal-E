@@ -1,6 +1,55 @@
 const router = require("express").Router();
-const { Goals } = require("../../models");
+const { Goals, Checklist } = require("../../models");
 const withAuth = require("../../utils/auth");
+
+router.get('/', withAuth, async (req, res) => {
+  try {
+    const goalsData = await Goals.findAll({
+      where: {
+        // use session ID
+        user_id: req.session.user_id,
+      },
+      attributes: ['id', 'description', 'created_at', 'goals_id'],
+      order:[
+        ['created_at', 'DESC']
+      ],
+      include: [
+        {
+          model: Checklist,
+          attributes: ['description'],
+        }
+      ],
+    }); 
+      
+    res.status(200).json(goalsData)
+  } catch (err) {
+    res.status(500).json(err);
+  }
+}); 
+
+router.get('/:id', withAuth, async (req, res) => {
+  try {
+    const goalsData = await Goals.findByPk({
+      where: {
+        // use session ID
+        goals_id: req.params.id,
+      },
+      attributes: ['id', 'description', 'created_at', 'goals_id'],  
+      
+      include: [
+        {
+          model: Checklist,
+          attributes: ['description'],
+        },
+      ],
+    });
+
+    res.status(200).json(goalsData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 
 router.post("/", withAuth, async (req, res) => {
   try {
