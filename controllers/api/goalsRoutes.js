@@ -60,6 +60,8 @@ router.post("/", withAuth, async (req, res) => {
     res.status(400).json(err);
   }
 });
+
+
 router.delete("/:id", withAuth, async (req, res) => {
   try {
     const goalsData = await Goals.destroy({
@@ -77,6 +79,8 @@ router.delete("/:id", withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+
 router.put("/:id", withAuth, async (req, res) => {
   try {
     const goalsData = await Goals.update(req.body, {
