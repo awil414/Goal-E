@@ -24,6 +24,16 @@ router.get('/', withAuth, async (req, res) => {
       res.status(500).json(err);
     }
   });
+
+  router.get('/goals', (req, res) => {
+    // If the user is already logged in, redirect the request to another route
+    if (req.session.logged_in) {
+      res.redirect('/');
+      return;
+    }
+    res.render('goals');
+  });
+  
   
   
   // GET login form
