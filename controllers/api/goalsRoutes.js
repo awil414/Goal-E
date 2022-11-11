@@ -6,7 +6,6 @@ router.get('/', withAuth, async (req, res) => {
   try {
     const goalsData = await Goals.findAll({
       where: {
-        // use session ID
         user_id: req.session.user_id,
       },
       attributes: ['id', 'description', 'created_at', 'goals_id'],
@@ -31,7 +30,6 @@ router.get('/:id', withAuth, async (req, res) => {
   try {
     const goalsData = await Goals.findByPk({
       where: {
-        // use session ID
         goals_id: req.params.id,
       },
       attributes: ['id', 'description', 'created_at', 'goals_id'],  
