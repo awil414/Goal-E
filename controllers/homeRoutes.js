@@ -4,9 +4,9 @@ const router = require('express').Router();
 const { User, Goals, Checklist } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
     try {
-      const goalsData = await Goals.findAll({
+      /*const goalsData = await Goals.findAll({
         attributes: ['id', 'title', 'description', 'created_at', 'user_id'],
         include: [
           {
@@ -17,9 +17,9 @@ router.get('/', withAuth, async (req, res) => {
       });
   
       const goals = goalsData.map((goals) => goals.get({ plain: true })); 
-  
-      res.render('goals', {
-        goals,
+  */
+      res.render('homepage', {
+        
          logged_in: req.session.logged_in,
       });
     } catch (err) {
@@ -27,22 +27,12 @@ router.get('/', withAuth, async (req, res) => {
     }
   });
 
-  router.get('/goals', (req, res) => {
-    // If the user is already logged in, redirect the request to another route
-    if (req.session.logged_in) {
-      res.redirect('/');
-      return;
-    }
-    res.render('goals');
-  });
-  
-  
-  
+
   // GET login form
   router.get('/login', (req, res) => {
     // If the user is already logged in, redirect the request to another route
     if (req.session.logged_in) {
-      res.redirect('/');
+      res.redirect('/profile');
       return;
     }
     res.render('login');
@@ -51,7 +41,7 @@ router.get('/', withAuth, async (req, res) => {
   // GET signup form
   router.get('/signup', (req, res) => {
     if (req.session.logged_in) {
-      res.redirect('/');
+      res.redirect('/profile');
       return;
     }
     res.render('signup');
