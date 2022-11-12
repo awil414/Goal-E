@@ -1,6 +1,8 @@
+//Potentially delete this entire file. All a tags take care of this.
+
 //Button to create goal clicked taken to createGoals
 const createGoal = async () => {
-    const response = await fetch('/api/create', {
+    const response = await fetch('/create', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
 
@@ -16,7 +18,7 @@ const createGoal = async () => {
 
 //Button to edit goal clicked, taken to editGoals
 const editGoal = async () => {
-    const response = await fetch('/api/edit', {
+    const response = await fetch('/edit', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
 
@@ -30,5 +32,5 @@ const editGoal = async () => {
 
 };
 
-document.queryselector('.profile-create-btn').addEventListener('click', createGoal )
-document.querySelector('.profile-edit-btn').addEventListener('click', editGoal)
+//document.querySelector('.profile-create-btn').addEventListener('click', createGoal )
+//document.querySelector('.profile-edit-btn').addEventListener('click', editGoal)
