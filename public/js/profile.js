@@ -1,6 +1,6 @@
 //Button to create goal clicked taken to createGoals
 const createGoal = async () => {
-    const response = await fetch('/', {
+    const response = await fetch('/api/create', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
 
@@ -16,7 +16,7 @@ const createGoal = async () => {
 
 //Button to edit goal clicked, taken to editGoals
 const editGoal = async () => {
-    const response = await fetch('/profile', {
+    const response = await fetch('/api/edit', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
 

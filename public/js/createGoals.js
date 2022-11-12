@@ -8,7 +8,7 @@ const newGoals = async (event) => {
     const steps = document.querySelector('input[name="goal-steps"]').value.trim();
 
     // Send a POST request to the API endpoint
-  const response = await fetch(`/api/goals`, {
+  const response = await fetch(`/api/create`, {
     method: 'POST',
     body: JSON.stringify({ title, description }),
     headers: { 'Content-Type': 'application/json' },
