@@ -7,7 +7,7 @@ Goal-E is a full-stack application that was developed to help users write goals 
 ## Technologies Used:
 -"bcrypt"- Used for encrypting passwords
 
--"connest-session-sequelize" and "express-session"- Used for session (loggedin syntax)
+-"connect-session-sequelize" and "express-session"- Used for session (loggedin syntax)
 
 -"dotenv"- Used for keeping private developer passwords for SQl safe
 

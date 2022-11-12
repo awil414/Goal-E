@@ -1,6 +1,6 @@
 //Button to create goal clicked taken to createGoals
 const createGoal = async () => {
-    const response = await fetch('/profile', {
+    const response = await fetch('/', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
 
