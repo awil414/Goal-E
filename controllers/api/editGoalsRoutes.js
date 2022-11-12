@@ -2,28 +2,6 @@ const router = require("express").Router();
 const { Goals, Checklist } = require("../../models");
 const withAuth = require("../../utils/auth");
 
-//Getting the goal that the user chose to edit
-router.get('/edit/:id', async (req, res) => {
-  try {
-    const goalsData = await Goals.findByPk(req.params.id, {
-      include: [
-        {
-          model: Checklist,
-          attributes: ['name'],
-        },
-      ],
-    });
-
-    const goal = goalsData.get({ plain: true });
-
-    res.render('edit', {
-      ...goal,
-      logged_in: req.session.logged_in
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
 
 
 //Updating chosen goal
