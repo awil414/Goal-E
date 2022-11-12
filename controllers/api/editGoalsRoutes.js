@@ -3,7 +3,6 @@ const { Goals, Checklist } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 
-
 //Updating chosen goal
 router.put("edit/:id", withAuth, async (req, res) => {
   try {
