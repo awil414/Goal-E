@@ -3,7 +3,7 @@ const { Goals, Checklist } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 
-router.post("/create", withAuth, async (req, res) => {
+router.post("/", withAuth, async (req, res) => {
   try {
     const newGoals = await Goals.create({
       ...req.body,
@@ -15,7 +15,7 @@ router.post("/create", withAuth, async (req, res) => {
   }
 });
 
-router.post("/create", withAuth, async (req, res) => {
+router.post("/", withAuth, async (req, res) => {
   try {
     const newChecklist = await Checklist.create({
       ...req.body,
