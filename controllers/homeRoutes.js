@@ -6,18 +6,7 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
     try {
-      /*const goalsData = await Goals.findAll({
-        attributes: ['id', 'title', 'description', 'created_at', 'user_id'],
-        include: [
-          {
-            model: Checklist,
-            attributes: ['id', 'description', 'created_at', 'goals_id'],
-          },
-        ],
-      });
-  
-      const goals = goalsData.map((goals) => goals.get({ plain: true })); 
-  */
+ 
       res.render('homepage', {
         
          logged_in: req.session.logged_in,

@@ -49,13 +49,18 @@ router.get('/:id', withAuth, async (req, res) => {
 });
 
 
-router.post("/", withAuth, async (req, res) => {
+router.post("/goals", withAuth, async (req, res) => {
   try {
     const newGoals = await Goals.create({
       ...req.body,
       user_id: req.session.user_id,
     });
     res.status(200).json(newGoals);
+    res.render('goals', {
+        
+      logged_in: req.session.logged_in,
+   });
+
   } catch (err) {
     res.status(400).json(err);
   }
