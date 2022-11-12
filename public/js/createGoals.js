@@ -1,6 +1,5 @@
 // Button clicked to CREATE goal
-//method:"POST"
-//document.location.replace("/profile") with new goal rendered on profile
+
 
 const newGoals = async (event) => {
     event.preventDefault();
@@ -9,7 +8,7 @@ const newGoals = async (event) => {
     const steps = document.querySelector('input[name="goal-steps"]').value.trim();
 
     // Send a POST request to the API endpoint
-  const response = await fetch(`/api/goals`, {
+  const response = await fetch(`/api/create`, {
     method: 'POST',
     body: JSON.stringify({ title, description }),
     headers: { 'Content-Type': 'application/json' },
@@ -22,4 +21,5 @@ const newGoals = async (event) => {
   }
 };
 
+//This needs to match button in createGoals.handlebars
 document.querySelector('.goalInput-button').addEventListener('submit', newGoals);
