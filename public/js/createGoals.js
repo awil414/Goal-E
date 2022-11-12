@@ -1,6 +1,5 @@
 // Button clicked to CREATE goal
-//method:"POST"
-//document.location.replace("/profile") with new goal rendered on profile
+
 
 const newGoals = async (event) => {
     event.preventDefault();
@@ -22,4 +21,5 @@ const newGoals = async (event) => {
   }
 };
 
+//This needs to match button in createGoals.handlebars
 document.querySelector('.goalInput-button').addEventListener('submit', newGoals);
