@@ -1,18 +1,34 @@
-  .body {
-   margin: 0;
+  html, body {
+    height: 100vh;
+    margin: 0;
   }
 
   .home-container {
     background-image: url('../media/dave-ruck-GQZg8CrP3sc-unsplash.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: 100% 100%;
-    height: 38rem;
+    background-size: 100%;
+    height: 47rem;
+ 
+  }
+
+  .profile-container {
+    background-image: url('../media/dave-ruck-GQZg8CrP3sc-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+    min-width: 300px;
+    align-self: center;
+    height: 47rem;
+  }
+
+  .navbar-item {
+    margin-left: 5%;
   }
 
   .home-header {
     color: white;
-    padding-top: 12rem;
+    padding-top: 11rem;
     padding-left: 2rem;
     font-family: cursive;
     font-size: 5rem;
@@ -29,6 +45,33 @@
   .start-button {
     color: white;
     padding: 5px;
+  }
+
+  #signupForm {
+    border: 5px solid black;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 8px;
+  }
+
+  #signupContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: auto;
+    margin-top: 5vh;
+    border-radius: 8px;
+  }
+
+  #signupHeader{
+    margin: 2rem 2rem 2rem 2rem;
+    text-decoration: underline;
+    text-align: center;
+  }
+
+  .form-group{
+    text-align: center;
+    margin: 1rem;
   }
 
   .home-login-btn {
@@ -76,18 +119,61 @@
   margin-left: 20%;
 }
 
+.profileHeader {
+  font-size: 3rem;
+  font-family: cursive;
+}
+
+.createBtnContainer {
+  text-align: center;
+}
+.profile-create-btn {
+  font-size: 1.5rem;
+  padding: 10px;
+}
+
+.profile-create-btn:hover {
+  border: 3px solid white
+}
+
+.navbar-item:hover {
+  border: 3px solid white
+}
+
+.empty {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
 #goalsList {
   padding: 2rem;
 }
 
 .goalInput {
   margin-bottom: 48%;
+  text-align: center;
+}
+
+#goalInput-button {
+  margin-top: 2rem;
+}
+
+.message-body {
+  text-align: center;
+}
+ 
+.input {
+  text-align: center;
+}
+
+.deleteGoalBtn {
+  border-radius: 5px;
 }
 
 .footer {
-  background-color: rgb(188, 187, 187);
-  margin-bottom: 0;
-
+  background-color: white;
+  margin-bottom: 5%;
+  padding: 3rem;
 }
 @media only screen and (max-width: 1000px) {
   #email-login {
@@ -106,6 +192,33 @@
   
 }
 
+@media only screen and (max-width: 1000px) {
+  .home-container {
+    background-image: url('../media/dave-ruck-GQZg8CrP3sc-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 125%;
+    height: 47rem;
+  }
+  
+}
+
+@media only screen and (max-width: 600px) {
+  .home-container {
+    height: 35rem;
+    background-size: 150%;
+    margin-bottom: 0;
+  }
+  .profile-container {
+    height: 35rem;
+    background-size: 150%;
+    margin-bottom: 0;
+  }
+  .form-input {
+    width: 50%;
+  }
+  
+}
 
 
 
