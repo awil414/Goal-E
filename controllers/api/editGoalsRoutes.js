@@ -23,23 +23,42 @@ router.put("edit/:id", withAuth, async (req, res) => {
 
 
 //Deleting chosen goal
-router.delete("/:id", withAuth, async (req, res) => {
-  try {
-    const goalsData = await Goals.destroy({
-      where: {
-        id: req.params.id,
-        user_id: req.session.user_id,
-      },
-    });
-    if (!goalsData) {
-      res.status(404).json({ message: "No goals found with this id!" });
-      return;
+  //Deleting chosen goal
+  router.delete('/:id', async (req, res) => {
+    // delete on tag by its `id` value
+    try {
+      const goalsData = await Goals.destroy({
+        where: {
+          id: req.params.id
+        }
+      });
+  
+      if (!goalsData) {
+        res.status(400).json({message: 'No Goal found with that ID'})
+        return;
+      }
+      res.status(200).json(goalsData)
+    } catch (err) {
+      res.status(500).json(err);
     }
-    res.status(200).json(goalsData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+  });
+// router.delete("edit/:id", withAuth, async (req, res) => {
+//   try {
+//     const goalsData = await Goals.destroy({
+//       where: {
+//         id: req.params.id,
+//         user_id: req.session.user_id,
+//       },
+//     });
+//     if (!goalsData) {
+//       res.status(404).json({ message: "No goals found with this id!" });
+//       return;
+//     }
+//     res.status(200).json(goalsData);
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 //Updating steps for the goal
 router.put("/:id", withAuth, async (req, res) => {

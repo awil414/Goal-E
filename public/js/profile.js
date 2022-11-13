@@ -32,5 +32,24 @@ const editGoal = async () => {
 
 };
 
+//  Delete Completed Goals
+const delButtonHandler = async (event) => {
+    if (event.target.hasAttribute('data-id')) {
+      const id = event.target.getAttribute('data-id');
+  
+      const response = await fetch(`/api/edit/${id}`, {
+        method: 'DELETE',
+      });
+  
+      if (response.ok) {
+        document.location.replace('/profile');
+      } else {
+        alert('Failed to delete goal');
+      }
+    }
+  };
+  
+  document.querySelector('.deleteGoalBtn').addEventListener('click', delButtonHandler);
+
 //document.querySelector('.profile-create-btn').addEventListener('click', createGoal )
 //document.querySelector('.profile-edit-btn').addEventListener('click', editGoal)

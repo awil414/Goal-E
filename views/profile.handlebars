@@ -46,14 +46,15 @@
     <!--Button needed in each container class ="profile-edit-btn"-->
 
     {{#each goals as |goal|}}
-    <div class="hero-body">
+    <div id="goalsList" class="hero-body">
       <div class="container has-text-centered">
         <p class="title">
           {{goal.title}}
         </p>
         <p class="subtitle">
-          {{checklist}}
+          {{goal.description}}
         </p>
+        <button class="deleteGoalBtn" data-id="{{goal.id}}">Goal Completed</button>
         {{else}}
         <p class="empty">No Goals Yet</p>
       </div>

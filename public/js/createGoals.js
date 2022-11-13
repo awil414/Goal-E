@@ -5,12 +5,12 @@ const newGoals = async (event) => {
     event.preventDefault();
 
     const title = document.querySelector('input[name="goal-title"]').value.trim();
-    const steps = document.querySelector('input[name="goal-steps"]').value.trim();
+    const description = document.querySelector('input[name="goal-steps"]').value.trim();
 
     // Send a POST request to the API endpoint
   const response = await fetch(`/api/create`, {
     method: 'POST',
-    body: JSON.stringify({ title, }), //description removed
+    body: JSON.stringify({ title, description }), //description removed
     headers: { 'Content-Type': 'application/json' },
   });
 
@@ -20,6 +20,7 @@ const newGoals = async (event) => {
     alert(response.statusText);
   }
 };
+
 
 //This needs to match button in createGoals.handlebars
 document.querySelector('#goalInput-button').addEventListener('click', newGoals);
