@@ -45,20 +45,15 @@ router.get('/', async (req, res) => {
   });
 
 //GET edit goal form
-  router.get('/edit/:id', async (req, res) => {
+  router.post('/edit/:id', async (req, res) => {
     try {
       const goalsData = await Goals.findByPk(req.params.id, {
-        include: [
-          {
-            model: Checklist,
-            attributes: ['name'],
-          },
-        ],
+        include: ['title', 'description'],
       });
   
       const goal = goalsData.get({ plain: true });
   
-      res.render('edit', {
+      res.render('editGoals', {
         ...goal,
         logged_in: req.session.logged_in
       });
