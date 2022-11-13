@@ -17,7 +17,7 @@ const editGoalHandler = async (event) => {
   ];
 
   // Send a PUT request to the API endpoint
-  const response = await fetch(`/api/goals/${id}`, {
+  const response = await fetch(`/api/${id}`, {
     method: "PUT",
     body: JSON.stringify({ title, description }),
     headers: { "Content-Type": "application/javascript" },
@@ -33,7 +33,7 @@ const editGoalHandler = async (event) => {
 
 
 
-document.querySelector(".editGoalBtn").addEventListener("click", editGoalHandler);
+document.querySelector("#editInput-button").addEventListener("click", editGoalHandler);
 
 
 // I don't think we need this. It is deleting goal already.

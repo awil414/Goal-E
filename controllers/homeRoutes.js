@@ -5,64 +5,57 @@ const { User, Goals, Checklist } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
-    try {
+  try {
  
-      res.render('homepage', {
+    res.render('homepage', {
         
-         logged_in: req.session.logged_in,
+      logged_in: req.session.logged_in,
       });
+    
     } catch (err) {
       res.status(500).json(err);
     }
   });
 
-  // GET login form
-  router.get('/login', (req, res) => {
-    // If the user is already logged in, redirect the request to another route
-    if (req.session.logged_in) {
-      res.redirect('/profile');
-      return;
-    }
+// GET login form
+router.get('/login', (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.redirect('/profile');
+    return;
+  }
     res.render('login');
-  });
+});
   
-  // GET signup form
-  router.get('/signup', (req, res) => {
-    if (req.session.logged_in) {
-      res.redirect('/profile');
-      return;
-    }
-    res.render('signup');
-  });
+// GET signup form
+router.get('/signup', (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect('/profile');
+    return;
+  }
+  res.render('signup');
+});
 
-  //GET create goals form
-  router.get('/create', (req,res) => {
-    if (!req.session.logged_in) {
-      res.sendStatus(404)
-      return;
-    }
-    res.render('createGoals');
-  });
+//GET create goals form
+router.get('/create', (req,res) => {
+  if (!req.session.logged_in) {
+    res.sendStatus(404)
+    return;
+  }
+  res.render('createGoals');
+});
 
 //GET edit goal form
-  router.post('/edit/:id', async (req, res) => {
-    try {
-      const goalsData = await Goals.findByPk(req.params.id, {
-        include: ['title', 'description'],
-      });
-  
-      const goal = goalsData.get({ plain: true });
-  
-      res.render('editGoals', {
-        ...goal,
-        logged_in: req.session.logged_in
-      });
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
+router.get('/edit', (req, res) => {
+  if(!req.session.logged_in) {
+    res,sendStatus(404)
+    return;
+  }
+  res.render('editGoals');
+});  
+
 
 
   
-  module.exports = router;
+module.exports = router;
   
