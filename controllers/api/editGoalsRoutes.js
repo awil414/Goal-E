@@ -2,6 +2,28 @@ const router = require("express").Router();
 const { Goals, Checklist } = require("../../models");
 const withAuth = require("../../utils/auth");
 
+//GET edit goal form
+router.get('/edit/:id', async (req, res) => {
+  try {
+    const goalsData = await Goals.findByPk(req.params.id, {
+      include: [
+        {
+          model: Goals,
+          attributes: ['title','description'],
+        },
+      ],
+    });
+
+    const edit = goalsData.get({ plain: true });
+
+    res.render('editGoals', {
+      ...edit,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 //Updating chosen goal
 router.put("edit/:id", withAuth, async (req, res) => {
