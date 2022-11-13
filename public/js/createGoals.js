@@ -24,3 +24,17 @@ const newGoals = async (event) => {
 
 //This needs to match button in createGoals.handlebars
 document.querySelector('#goalInput-button').addEventListener('click', newGoals);
+
+//button clicked, taken to login page
+const profile = async () => {
+  const response = await fetch('/api/create', {
+      method:'POST',
+      headers:{'Content-Type': 'application/json'},
+  });
+
+  if(response.ok){
+      document.location.replace('/profile');
+  }
+};
+
+document.querySelector('#returnHome').addEventListener('click', profile)

@@ -51,5 +51,6 @@ const delButtonHandler = async (event) => {
   
   document.querySelector('.deleteGoalBtn').addEventListener('click', delButtonHandler);
 
+  
 //document.querySelector('.profile-create-btn').addEventListener('click', createGoal )
 //document.querySelector('.profile-edit-btn').addEventListener('click', editGoal)
