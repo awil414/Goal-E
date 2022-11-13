@@ -76,9 +76,18 @@
   margin-left: 20%;
 }
 
+#goalsList {
+  padding: 2rem;
+}
+
+.goalInput {
+  margin-bottom: 48%;
+}
+
 .footer {
   background-color: rgb(188, 187, 187);
-margin-top: 20%;
+  margin-bottom: 0;
+
 }
 @media only screen and (max-width: 1000px) {
   #email-login {
