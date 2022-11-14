@@ -29,7 +29,7 @@ router.get("/", withAuth, async (req, res) => {
 });
 
 //GET edit goal form
-router.get('/edit/:id', async (req, res) => {
+/*router.get('/edit/:id', async (req, res) => {
   try {
     const goalsData = await Goals.findByPk(req.params.id, {
       include: [
@@ -58,6 +58,6 @@ router.get('/edit/:id', async (req, res) => {
       return;
     }
     res.render('createGoals');
-  });
+  });*/
 
 module.exports = router;
