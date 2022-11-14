@@ -1,90 +1,90 @@
-  html, body {
-    height: 100vh;
-    margin: 0;
-  }
+html,
+body {
+  height: 100vh;
+  margin: 0;
+}
 
-  .home-container {
-    background-image: url('../media/dave-ruck-GQZg8CrP3sc-unsplash.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100%;
-    height: 47rem;
- 
-  }
+.home-container {
+  background-image: url("../media/dave-ruck-GQZg8CrP3sc-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
+  height: 47rem;
+}
 
-  .profile-container {
-    background-image: url('../media/dave-ruck-GQZg8CrP3sc-unsplash.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100%;
-    min-width: 300px;
-    align-self: center;
-    height: 47rem;
-  }
+.profile-container {
+  background-image: url("../media/dave-ruck-GQZg8CrP3sc-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
+  min-width: 300px;
+  align-self: center;
+  height: 47rem;
+}
 
-  .navbar-item {
-    margin-left: 5%;
-  }
+.navbar-item {
+  margin-left: 5%;
+}
 
-  .home-header {
-    color: white;
-    padding-top: 11rem;
-    padding-left: 2rem;
-    font-family: cursive;
-    font-size: 5rem;
-  }
+.home-header {
+  color: white;
+  padding-top: 11rem;
+  padding-left: 2rem;
+  font-family: cursive;
+  font-size: 5rem;
+}
 
-  .homeMessageContainer {
-    margin-left: 4rem;
-  }
+.homeMessageContainer {
+  margin-left: 4rem;
+}
 
-  .home-description {
-    color: white;
-  }
+.home-description {
+  color: white;
+}
 
-  .start-button {
-    color: white;
-    padding: 5px;
-  }
+.start-button {
+  color: white;
+  padding: 5px;
+}
 
-  #signupForm {
-    border: 5px solid black;
-    margin-left: 10%;
-    margin-right: 10%;
-    border-radius: 8px;
-  }
+#signupForm {
+  border: 5px solid black;
+  margin-left: 10%;
+  margin-right: 10%;
+  border-radius: 8px;
+}
 
-  #signupContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: auto;
-    margin-top: 5vh;
-    border-radius: 8px;
-  }
+#signupContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: auto;
+  margin-top: 5vh;
+  border-radius: 8px;
+}
 
-  #signupHeader{
-    margin: 2rem 2rem 2rem 2rem;
-    text-decoration: underline;
-    text-align: center;
-  }
+#signupHeader {
+  margin: 2rem 2rem 2rem 2rem;
+  text-decoration: underline;
+  text-align: center;
+}
 
-  .form-group{
-    text-align: center;
-    margin: 1rem;
-  }
+.form-group {
+  text-align: center;
+  margin: 1rem;
+}
 
-  .home-login-btn {
-    color: white;
-    padding: 5px;
-  }
+.home-login-btn {
+  color: white;
+  padding: 5px;
+}
 
-  .login-form {
-    margin: 44px;
-    border: 5px solid black;
-    border-radius: 10px;
-    padding: 15px;
-  }
+.login-form {
+  margin: 44px;
+  border: 5px solid black;
+  border-radius: 10px;
+  padding: 15px;
+}
 #login-form {
   border: 4px solid black;
   border-radius: 8px;
@@ -133,11 +133,11 @@
 }
 
 .profile-create-btn:hover {
-  border: 3px solid white
+  border: 3px solid white;
 }
 
 .navbar-item:hover {
-  border: 3px solid white
+  border: 3px solid white;
 }
 
 .empty {
@@ -161,7 +161,7 @@
 .message-body {
   text-align: center;
 }
- 
+
 .input {
   text-align: center;
 }
@@ -189,18 +189,16 @@
     width: 70%;
     margin-left: 10%;
   }
-  
 }
 
 @media only screen and (max-width: 1000px) {
   .home-container {
-    background-image: url('../media/dave-ruck-GQZg8CrP3sc-unsplash.jpg');
+    background-image: url("../media/dave-ruck-GQZg8CrP3sc-unsplash.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 125%;
     height: 47rem;
   }
-  
 }
 
 @media only screen and (max-width: 600px) {
@@ -217,13 +215,4 @@
   .form-input {
     width: 50%;
   }
-  
 }
-
-
-
-
-
-
-
-  

@@ -2,7 +2,6 @@ const router = require("express").Router();
 const { Goals, Checklist } = require("../../models");
 const withAuth = require("../../utils/auth");
 
-
 router.post("/", withAuth, async (req, res) => {
   try {
     const newGoals = await Goals.create({
@@ -27,18 +26,13 @@ router.post("/", withAuth, async (req, res) => {
   }
 });
 
-router.post('/', (req, res) => {
+router.post("/", (req, res) => {
   // If the user is already logged in, return to profile
   if (req.session.logged_in) {
-    res.redirect('/profile');
+    res.redirect("/profile");
     return;
   }
-  res.render('login');
+  res.render("login");
 });
-
-
-
-
-
 
 module.exports = router;

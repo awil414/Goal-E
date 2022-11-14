@@ -1,48 +1,45 @@
 // Use (for lines 1-37) profileRoutes instead?????
 
-const router = require('express').Router();
-const { User, Goals, Checklist } = require('../models');
-const withAuth = require('../utils/auth');
+const router = require("express").Router();
+const { User, Goals, Checklist } = require("../models");
+const withAuth = require("../utils/auth");
 
-router.get('/', async (req, res) => {
+router.get("/", async (req, res) => {
   try {
- 
-    res.render('homepage', {
-        
+    res.render("homepage", {
       logged_in: req.session.logged_in,
-      });
-    
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 // GET login form
-router.get('/login', (req, res) => {
+router.get("/login", (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect('/profile');
+    res.redirect("/profile");
     return;
   }
-    res.render('login');
+  res.render("login");
 });
-  
+
 // GET signup form
-router.get('/signup', (req, res) => {
+router.get("/signup", (req, res) => {
   if (req.session.logged_in) {
-    res.redirect('/profile');
+    res.redirect("/profile");
     return;
   }
-  res.render('signup');
+  res.render("signup");
 });
 
 //GET create goals form
-router.get('/create', (req,res) => {
+router.get("/create", (req, res) => {
   if (!req.session.logged_in) {
-    res.sendStatus(404)
+    res.sendStatus(404);
     return;
   }
-  res.render('createGoals');
+  res.render("createGoals");
 });
 
 //GET edit goal form
@@ -52,11 +49,11 @@ router.get('/create', (req,res) => {
     return;
   }
   res.render('editGoals');
-}); */ 
+}); */
 
-router.get('/edit/:id', async (req, res) => {
+router.get("/edit/:id", async (req, res) => {
   try {
-    console.log(req.params.id)
+    console.log(req.params.id);
     const goalsData = await Goals.findByPk(req.params.id, {
       /*include: [
         {
@@ -68,18 +65,13 @@ router.get('/edit/:id', async (req, res) => {
 
     const goal = goalsData.get({ plain: true });
 
-    res.render('editGoals', {
+    res.render("editGoals", {
       goal: goal,
-      logged_in: req.session.logged_in
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-
-
-
-  
 module.exports = router;
-  
