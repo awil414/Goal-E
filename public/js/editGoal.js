@@ -12,12 +12,10 @@ const editGoalHandler = async (event) => {
     .value.trim();
 
   // Selects ONE goal
-  const id = window.location.toString().split("/")[
-    window.location.toString().split("/").length - 1
-  ];
+  const id = window.location.pathname.split('/')[3]
 
   // Send a PUT request to the API endpoint
-  const response = await fetch(`/api/${id}`, {
+  const response = await fetch(`/api/edit/${id}`, {
     method: "PUT",
     body: JSON.stringify({ title, description }),
     headers: { "Content-Type": "application/javascript" },
