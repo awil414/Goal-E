@@ -1,10 +1,6 @@
-//Button clicked to UPDATE
-//method:"PUT"
-//document.location.replace("/profile") with edits showing on profile page
 
 const editGoalHandler = async (event) => {
   event.preventDefault();
-
   // Collect values from the goals 
   const title = document.querySelector('input[name="goal-title"]').value.trim();
   const description = document
@@ -12,13 +8,13 @@ const editGoalHandler = async (event) => {
     .value.trim();
 
   // Selects ONE goal
-  const id = window.location.pathname.split('/')[3]
+  const id = window.location.pathname.split('/')[2]
 
   // Send a PUT request to the API endpoint
   const response = await fetch(`/api/edit/${id}`, {
     method: "PUT",
     body: JSON.stringify({ title, description }),
-    headers: { "Content-Type": "application/javascript" },
+    headers: { "Content-Type": "application/json" },
   });
 
   if (response.ok) {
@@ -34,7 +30,3 @@ const editGoalHandler = async (event) => {
 document.querySelector("#editInput-button").addEventListener("click", editGoalHandler);
 
 
-// I don't think we need this. It is deleting goal already.
-//Button clicked to DELETE
-//method:"DELETE"
-//document.location.replace("/profile") with the deleted goal not showing

@@ -17,22 +17,22 @@ const createGoal = async () => {
 };
 
 //Button to edit goal clicked, taken to editGoals
-const editGoal = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
+// const editGoal = async (event) => {
+//   if (event.target.hasAttribute('data-id')) {
+//     const id = event.target.getAttribute('data-id');
 
-    const response = await fetch(`/api/edit/${id}`, {
-      method: 'POST',
-    });
+//     const response = await fetch(`/api/edit/${id}`, {
+//       method: 'POST',
+//     });
 
-    if (response.ok) {
-      document.location.replace('/edit');
-    } else {
-      alert('Failed to edit goal');
-    }
-  }
-};
-document.querySelector('.editGoalBtn').addEventListener('click', editGoal)
+//     if (response.ok) {
+//       document.location.replace('/edit');
+//     } else {
+//       alert('Failed to edit goal');
+//     }
+//   }
+// };
+// document.querySelector('.editGoalBtn').addEventListener('click', editGoal)
 //  Delete Completed Goals
 const delButtonHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
