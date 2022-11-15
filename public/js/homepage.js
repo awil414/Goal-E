@@ -1,4 +1,4 @@
-//Button clicked, take to sign-in page
+//Button clicked, take to sign-up page
 const getStarted = async () => {
   const response = await fetch("/", {
     method: "POST",
