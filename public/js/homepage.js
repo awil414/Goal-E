@@ -24,5 +24,5 @@ const login = async () => {
   }
 };
 
-document.queryselector(".start-button").addEventListener("click", getStarted);
+document.querySelector(".start-button").addEventListener("click", getStarted);
 document.querySelector(".home-login-btn").addEventListener("click", login);
