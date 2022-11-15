@@ -7,6 +7,7 @@ const getStarted = async () => {
 
   if (response.ok) {
     document.location.replace("/signup");
+  }  
 };
 
 //Button clicked, take to login page
