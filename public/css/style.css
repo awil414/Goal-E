@@ -167,7 +167,11 @@ body {
 }
 
 .deleteGoalBtn {
-  border-radius: 5px;
+  font-weight: 700;
+}
+
+.editGoalBtn {
+  font-weight: 700;
 }
 
 .footer {
