@@ -1,5 +1,4 @@
-// Button clicked to CREATE goal
-
+// CREATE new goal
 const newGoals = async (event) => {
   event.preventDefault();
 
@@ -22,10 +21,9 @@ const newGoals = async (event) => {
   }
 };
 
-//This needs to match button in createGoals.handlebars
 document.querySelector("#goalInput-button").addEventListener("click", newGoals);
 
-//button clicked, taken to login page
+//Button clicked, take to profile
 const profile = async () => {
   const response = await fetch("/api/create", {
     method: "POST",

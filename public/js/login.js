@@ -1,6 +1,7 @@
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
+  //Checks for valid email and password
   const email = document.querySelector("#email-login").value.trim();
   const password = document.querySelector("#password-login").value.trim();
 

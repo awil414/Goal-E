@@ -1,5 +1,6 @@
 const editGoalHandler = async (event) => {
   event.preventDefault();
+  
   // Collect values from the goals
   const title = document.querySelector('input[name="goal-title"]').value.trim();
   const description = document

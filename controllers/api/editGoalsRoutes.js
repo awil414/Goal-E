@@ -5,14 +5,7 @@ const withAuth = require("../../utils/auth");
 //GET edit goal form
 router.get("/edit/:id", async (req, res) => {
   try {
-    const goalsData = await Goals.findByPk(req.params.id, {
-      include: [
-        {
-          model: Goals,
-          attributes: ["title", "description"],
-        },
-      ],
-    });
+    const goalsData = await Goals.findByPk(req.params.id);
 
     const edit = goalsData.get({ plain: true });
 
@@ -64,23 +57,6 @@ router.delete("/:id", async (req, res) => {
     res.status(500).json(err);
   }
 });
-// router.delete("edit/:id", withAuth, async (req, res) => {
-//   try {
-//     const goalsData = await Goals.destroy({
-//       where: {
-//         id: req.params.id,
-//         user_id: req.session.user_id,
-//       },
-//     });
-//     if (!goalsData) {
-//       res.status(404).json({ message: "No goals found with this id!" });
-//       return;
-//     }
-//     res.status(200).json(goalsData);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
 
 //Updating steps for the goal
 // router.put("/:id", withAuth, async (req, res) => {
