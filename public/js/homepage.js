@@ -1,4 +1,4 @@
-//Button clicked, taken to sign-in page
+//Button clicked, take to sign-in page
 const getStarted = async () => {
   const response = await fetch("/", {
     method: "POST",
@@ -12,7 +12,7 @@ const getStarted = async () => {
   }
 };
 
-//button clicked, taken to login page
+//Button clicked, take to login page
 const login = async () => {
   const response = await fetch("/", {
     method: "POST",

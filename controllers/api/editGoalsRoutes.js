@@ -46,7 +46,6 @@ router.put("/:id", withAuth, async (req, res) => {
 });
 
 //Deleting chosen goal
-//Deleting chosen goal
 router.delete("/:id", async (req, res) => {
   // delete on tag by its `id` value
   try {

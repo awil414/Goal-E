@@ -21,6 +21,11 @@ router.get("/login", (req, res) => {
     res.redirect("/profile");
     return;
   }
+//   // If the user has an incorrect email/password, display error
+//   else if (!logged_in) {
+//     alert (message = "Not correct information!");
+//     return;
+//   }
   res.render("login");
 });
 
@@ -43,24 +48,24 @@ router.get("/create", (req, res) => {
 });
 
 //GET edit goal form
-/*router.get('/edit/:id', (req, res) => {
-  if(!req.session.logged_in) {
-    res,sendStatus(404)
-    return;
-  }
-  res.render('editGoals');
-}); */
+// router.get('/edit/:id', (req, res) => {
+//   if(!req.session.logged_in) {
+//     res,sendStatus(404)
+//     return;
+//   }
+//   res.render('editGoals');
+// }); 
 
 router.get("/edit/:id", async (req, res) => {
   try {
     console.log(req.params.id);
     const goalsData = await Goals.findByPk(req.params.id, {
-      /*include: [
-        {
-          model: Goals,
-          attributes: ['title','description'],
-        },
-      ],*/
+      // include: [
+      //   {
+      //     model: Goals,
+      //     attributes: ['title','description'],
+      //   },
+      // ],
     });
 
     const goal = goalsData.get({ plain: true });
