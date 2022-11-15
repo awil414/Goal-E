@@ -10,7 +10,7 @@ const newGoals = async (event) => {
   // Send a POST request to the API endpoint
   const response = await fetch(`/api/create`, {
     method: "POST",
-    body: JSON.stringify({ title, description }), //description removed
+    body: JSON.stringify({ title, description }), 
     headers: { "Content-Type": "application/json" },
   });
 
