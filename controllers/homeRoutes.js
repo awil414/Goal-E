@@ -29,7 +29,7 @@ router.get("/signup", (req, res) => {
     res.redirect("/profile");
     return;
   }
-  res.render("signup");
+  res.render("signUp");
 });
 
 //GET create goals form
